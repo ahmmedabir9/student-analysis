@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Checkout example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/checkout/">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+
+
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72"
+                height="72">
+            <h2>Students Assistance</h2>
+            <p class="lead">Fill up all these informations to get a feedback and assistance from us</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your Progress</span>
+                </h4>
+
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Name: </h6>
+                        </div>
+                        <p class="text-muted" id="name_out"></p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+                        <div>
+                            <h6 class="my-0">ID: </h6>
+                        </div>
+                        <p class="text-muted" id="id_out"></p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+                        <div>
+                            <h6 class="my-0">Depertment: </h6>
+                        </div>
+                        <p class="text-muted" id="dept_out"></p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+
+
+                        <div>
+                            <h6 class="my-0">CGPA: </h6>
+                        </div>
+                        <p class="text-muted" id="cgpa_out"></p>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group mb-3">
+
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Course Code: </h6>
+                        </div>
+                        <p class="text-muted" id="code_out"></p>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Attendance: </h6>
+                        </div>
+                        <p class="text-muted" id="attendance"></p>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+                        <div>
+                            <h6 class="my-0">First Term: </h6>
+                        </div>
+                        <p class="text-muted" id="ft_out"></p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+                        <div>
+                            <h6 class="my-0">Mid Term: </h6>
+                        </div>
+                        <p class="text-muted" id="mt_out"></p>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+
+
+                        <div>
+                            <h6 class="my-0">SGPA: </h6>
+                        </div>
+                        <p class="text-muted" id="sgpa_out"></p>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group mb-3">
+
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+                        <p class="text-muted" id="">Feedback:</p>
+                        <p class="text-muted" id="feedback"></p>
+
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+
+
+            <div class="col-md-8 order-md-1">
+
+
+                <h4 class="mb-3">Your Personal details</h4>
+
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="firstName">ID</label>
+                        <input type="text" class="form-control" id="id" placeholder="ID" value="" required>
+
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label for="lastName">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name" value="" required>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="firstName">Department</label>
+                        <input type="text" class="form-control" id="dept" placeholder="Department" value="" required>
+
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="lastName">Current CGPA</label>
+                        <input type="text" class="form-control" id="cgpa" placeholder="Current CGPA" value="" required>
+
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="lastName">Last Semester SGPA</label>
+                        <input type="text" class="form-control" id="last_sgpa" placeholder="Last Semester SGPA" value=""
+                            required>
+
+                    </div>
+                </div>
+
+
+
+
+                <h4 class="mb-3 py-5">Your Last Course details</h4>
+
+
+                <div class="row">
+                    <div class="col-md-8 mb-3">
+                        <label for="firstName">Course Name</label>
+                        <input type="text" class="form-control" id="course_name" placeholder="Course Name" value=""
+                            required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="lastName">Course Code</label>
+                        <input type="text" class="form-control" id="course_code" placeholder="Course Code" value=""
+                            required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Total Class</label>
+                        <input type="text" class="form-control" id="total_class" placeholder="Total Class" value=""
+                            required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Class Missed</label>
+                        <input type="text" class="form-control" id="missed_class" placeholder="Class Missed" value=""
+                            required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="firstName">First Term Marks</label>
+                        <input type="text" class="form-control" id="ft_mark" placeholder="First Term Mark" value=""
+                            required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="lastName">Mid Term Marks</label>
+                        <input type="text" class="form-control" id="mt_mark" placeholder="Mid Term Mark" value=""
+                            required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="lastName">Final Sgpa</label>
+                        <input type="text" class="form-control" id="final_sgpa" placeholder="Final SGPA" value=""
+                            required>
+                    </div>
+
+
+                </div>
+
+                <span class="text-muted">First Term & Mid Term Marks Should be out of 100</span>
+
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" onclick="myFunction()">Submit</button>
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; Sunit Kumar Dey</p>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script>
+
+        function myFunction() {
+            var name = document.getElementById("name").value;
+            var id = document.getElementById("id").value;
+            var dept = document.getElementById("dept").value;
+            var code = document.getElementById("course_code").value;
+
+            var total_class = parseInt(document.getElementById("total_class").value);
+            var missed_class = parseInt(document.getElementById("missed_class").value);
+            var ft_mark = parseInt(document.getElementById("ft_mark").value);
+            var mt_mark = parseInt(document.getElementById("mt_mark").value);
+
+            var cgpa = parseFloat(document.getElementById("cgpa").value);
+            var last_sgpa = parseFloat(document.getElementById("last_sgpa").value);
+            var final_sgpa = parseFloat(document.getElementById("final_sgpa").value);
+
+
+            var attendance = total_class - missed_class;
+
+            attendance = ((attendance / total_class) * 100).toFixed(2);
+            ft_mark = parseInt((ft_mark / 100) * 20);
+            mt_mark = parseInt((mt_mark / 100) * 20);
+
+
+
+            var feedback;
+
+
+            if (attendance < 70 && final_sgpa < 3) {
+                feedback = "You Must have to attend classes regularly and you should join mentoring classes"
+            }
+
+            else if (attendance >= 70 && final_sgpa < 3) {
+                feedback = "You Must have to attend mentoring classes"
+            }
+
+            else if (attendance >= 70 && final_sgpa >= 3) {
+                feedback = "You are doing well!!"
+            }
+
+
+
+
+            document.getElementById("cgpa_out").innerHTML = cgpa;
+            document.getElementById("name_out").innerHTML = name;
+            document.getElementById("dept_out").innerHTML = dept;
+            document.getElementById("code_out").innerHTML = code;
+            document.getElementById("id_out").innerHTML = id;
+            document.getElementById("attendance").innerHTML = attendance + "%";
+            document.getElementById("ft_out").innerHTML = ft_mark;
+            document.getElementById("mt_out").innerHTML = mt_mark;
+            document.getElementById("sgpa_out").innerHTML = final_sgpa;
+            document.getElementById("feedback").innerHTML = feedback;
+        }
+
+        window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+
+    <script src="/docs/4.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+    <script src="form-validation.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
